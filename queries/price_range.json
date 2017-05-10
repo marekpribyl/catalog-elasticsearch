@@ -1,0 +1,15 @@
+{
+  "query": {
+    "nested" : {
+      "path" : "price",
+      "query" : {
+        "bool" : {
+          "must" : [
+            { "match" : {"price.pricelist" : "RRP-EUR"} },
+            { "range" : {"price.final_price" : {"gt" : 50, "lt": 200}} }
+          ]
+        }
+      }
+    }
+  }
+}

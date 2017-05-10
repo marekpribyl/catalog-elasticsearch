@@ -1,0 +1,15 @@
+{
+  "query": {
+    "nested" : {
+      "path" : "stock_info",
+      "query" : {
+        "bool" : {
+          "must" : [
+            { "terms" : { "stock_info.inventory" : [ "CENTRAL", "SHOP_PRAGUE"] } } ,
+            { "range" : {"stock_info.count" : {"gt" : 0}} }
+          ]
+        }
+      }
+    }
+  }
+}

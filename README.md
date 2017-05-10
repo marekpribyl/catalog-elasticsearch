@@ -15,11 +15,18 @@ Filtering:
 * always products in category
 * just "onStock" product - stockInfo is defined as sum over some of the inventories
 * products with tags, e.g. sizes L, XL and colors RED, BLUE
-* price range from-to in predefined procelist
+* price range from-to for prices in given pricelist
 
 Ordering:
 
 * default by 'order' attribute of selected category
 
 Product catalog per language will be created.
+
+## ETL
+
+* get product (product, SKUs, categories, prices, tags)
+* get stock info across inventories for the product SKUs
+* map to summary JSON
+* push to Elasticsearch
 

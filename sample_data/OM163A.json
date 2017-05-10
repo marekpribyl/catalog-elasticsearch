@@ -11,7 +11,7 @@
   "colors": ["RED", "BLUE"],
   "sizes": ["L", "XL", "S"],
   "category": [
-    { "order": 100, "title": "Men's Jackets"},
+    { "order": 100, "title": "Men's"},
     { "order": 5, "title": "New Arrivals"}
   ],
   "price": [
