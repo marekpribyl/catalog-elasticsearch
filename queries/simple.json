@@ -2,12 +2,12 @@
   "query": {
     "bool": {
       "filter": {
-        "term": {
+        "match": {
           "title": "prophet jacket"
         }
       }
     }
   },
 
-  "sort": { "brand" : { "order": "asc" } }
+  "sort_brand": { "brand" : { "order": "asc" } }
 }

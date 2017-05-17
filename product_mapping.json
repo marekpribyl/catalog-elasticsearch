@@ -1,7 +1,7 @@
 {
   "properties": {
     "code": {
-      "type": "keyword"
+      "type": "text"
     },
     "title": {
       "type": "text"
@@ -11,6 +11,9 @@
     },
     "brand": {
       "type": "text"
+    },
+    "brand_keyword": {
+      "type": "keyword"
     },
     "collections": {
       "type": "keyword"

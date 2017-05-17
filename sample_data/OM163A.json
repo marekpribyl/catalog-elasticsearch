@@ -3,6 +3,7 @@
   "title": "Prophet Jacket",
   "description": "Coolest jacket on the world!",
   "brand": "Horsefeathers",
+  "brand_keyword": "Horsefeathers",
   "collections": ["F16", "S17"],
   "flag_new": true,
   "flag_promo": false,
