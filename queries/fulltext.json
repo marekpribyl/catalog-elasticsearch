@@ -8,6 +8,7 @@
 # ~N after a word signifies edit distance (fuzziness)
 # ~N after a phrase signifies slop amount
 {
+
   "query": {
     "simple_query_string": {
       "query": "-OM163A",
@@ -21,8 +22,7 @@
       "default_operator": "and"
     }
   },
-  "_source": [
-    "title",
-    "brand"
-  ]
+
+  "_source": [ "title", "brand" ]
+
 }

@@ -2,6 +2,7 @@
 # this solution is not optimal - check Suggesters to be used instead
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters-completion.html
 {
+
   "query": {
     "match_phrase_prefix": {
       "title": {
@@ -10,8 +11,7 @@
       }
     }
   },
-  "_source": [
-    "title",
-    "brand"
-  ]
+
+  "_source": [ "title", "image" ]
+
 }

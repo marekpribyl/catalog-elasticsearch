@@ -3,8 +3,9 @@
   "title": "Prophet Jacket Black",
   "description": "Coolest jacket on the world!",
   "brand": "Horsefeathers",
-  "brand_keyword": "Horsefeathers",
+  "brand_keyword": "HORSEFEATHERS",
   "color": "BLACK",
+  "image": "http://google.com",
   "collections": ["F16", "S17"],
   "flag_new": true,
   "flag_promo": false,
@@ -33,7 +34,7 @@
     }
   ],
   "price": [
-    { "pricelist": "RRP-CZK", "final_price": 100, "original_price": 300 },
-    { "pricelist": "RRP-EUR", "final_price": 300, "original_price": 300 }
+    { "pricelist": "RRP-CZK", "final": 100, "original": 300, "discount" : 66 },
+    { "pricelist": "RRP-EUR", "final": 300, "original": 300, "discount" : 0 }
   ]
 }

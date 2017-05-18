@@ -3,7 +3,7 @@
   "title": "DVS shoes",
   "description": "Nice one",
   "brand": "DVS",
-  "brand_keyword": "dvs",
+  "brand_keyword": "DVS",
   "flag_new": false,
   "flag_promo": false,
   "flag_discounted": false,
@@ -39,7 +39,7 @@
     }
   ],
   "price": [
-    { "pricelist": "RRP-CZK", "final_price": 1000, "original_price": 3000 },
-    { "pricelist": "RRP-EUR", "final_price": 150, "original_price": 300 }
+    { "pricelist": "RRP-CZK", "final": 1000, "original": 3000, "discount" : 66 },
+    { "pricelist": "RRP-EUR", "final": 150, "original": 300, "discount" : 50 }
   ]
 }

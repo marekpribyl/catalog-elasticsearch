@@ -4,18 +4,62 @@
   "size": 10,
 
   "query": {
-    "match_all": {}
+    "bool": {
+      "must": [
+        { "term" : { "color" : "RED" }  },
+        { "term" : { "brand_keyword" : "HORSEFEATHERS" }  },
+        {     "nested" : {
+          "path" : "price",
+          "query" : {
+            "bool" : {
+              "must" : [
+                { "match" : {"price.pricelist" : "RRP-EUR"} },
+                { "range" : {"price.final" : {"gt" : 50, "lt": 200}} }
+              ]
+            }
+          }
+        }
+        }
+      ]
+    }
   },
 
   "aggs": {
+    "prices" : {
+      "nested": { "path": "price" },
+      "aggs" : {
+        "filtered_prices": {
+          "filter" : { "term": { "price.pricelist" : "RRP-EUR" } },
+          "aggs" : {
+            "min_price" : { "min" : { "field" : "price.final" } },
+            "max_price" : { "max" : { "field" : "price.final" } }
+          }
+        }
+      }
+    },
+    "discounts" : {
+      "nested": { "path": "price" },
+      "aggs" : {
+        "filtered_discounts": {
+          "filter" : { "term": { "price.pricelist" : "RRP-EUR" } },
+          "aggs" : {
+            "min_price" : { "min" : { "field" : "price.discount" } },
+            "max_price" : { "max" : { "field" : "price.discount" } }
+          }
+        }
+      }
+    },
     "color": {
-      "terms": { "field": "colors.keyword" }
+      "terms": { "field": "color" }
     },
     "brand": {
       "terms": { "field": "brand_keyword" }
     },
-    "flag_new": {
+    "new": {
       "terms": { "field": "flag_new" }
+    },
+    "discounted": {
+      "terms": { "field": "flag_discounted" }
     },
     "variant" : {
       "nested" : { "path" : "variant" },
@@ -27,6 +71,9 @@
 
   "sort": { "brand_keyword" : { "order": "asc" } },
 
-  "_source": [ "title", "brand" ]
+  "_source": [ "title",
+    "brand"
+  ]
 
 }
+

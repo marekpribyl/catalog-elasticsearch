@@ -3,15 +3,13 @@
   "title": "Prophet Jacket",
   "description": "Coolest jacket ever!",
   "brand": "Horsefeathers",
-  "brand_keyword": "Horsefeathers",
+  "brand_keyword": "HORSEFEATHERS",
   "color": "RED",
   "collections": ["F16", "S17"],
-  "flag": {
-    "new": true,
-    "promo": false,
-    "discounted": false,
-    "featured": true
-  },
+  "flag_new": true,
+  "flag_promo": false,
+  "flag_discounted": false,
+  "flag_featured": true,
   "category": [
     { "order": 100, "title": "Men's"},
     { "order": 5, "title": "New Arrivals"}
@@ -43,7 +41,7 @@
     }
   ],
   "price": [
-    { "pricelist": "RRP-CZK", "final_price": 1000, "original_price": 3000 },
-    { "pricelist": "RRP-EUR", "final_price": 100, "original_price": 300 }
+    { "pricelist": "RRP-CZK", "final": 1000, "original": 3000, "discount" : 66 },
+    { "pricelist": "RRP-EUR", "final": 100, "original": 300, "discount" : 50 }
   ]
 }

@@ -6,16 +6,12 @@
     "brand": { "type": "text" },
     "brand_keyword": { "type": "keyword" },
     "color": { "type": "keyword" },
+    "image": {"type": "text", "index" : false},
     "collections": { "type": "keyword" },
-    "flag": {
-      "type": "nested",
-      "properties": {
-        "new": {"type": "boolean"},
-        "promo": {"type": "boolean"},
-        "featured": {"type": "boolean"},
-        "discounted": {"type": "boolean"}
-      }
-    },
+    "flag_new": {"type": "boolean"},
+    "flag_promo": {"type": "boolean"},
+    "flag_featured": {"type": "boolean"},
+    "flag_discounted": {"type": "boolean"},
     "variant": {
       "type": "nested",
       "properties": {
@@ -40,8 +36,9 @@
       "type": "nested",
       "properties": {
         "pricelist": { "type": "keyword" },
-        "final_price": { "type": "double" },
-        "original": { "type": "double" }
+        "final": { "type": "double" },
+        "original": { "type": "double" },
+        "discount": { "type": "double" }
       }
     }
   }
