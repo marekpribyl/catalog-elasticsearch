@@ -1,27 +1,49 @@
 {
   "code": "OM163A",
   "title": "Prophet Jacket",
-  "description": "Coolest jacket on the world!",
+  "description": "Coolest jacket ever!",
   "brand": "Horsefeathers",
   "brand_keyword": "Horsefeathers",
+  "color": "RED",
   "collections": ["F16", "S17"],
-  "flag_new": true,
-  "flag_promo": false,
-  "flag_discounted": false,
-  "flag_featured": true,
-  "colors": ["RED", "BLUE"],
-  "sizes": ["L", "XL", "S"],
+  "flag": {
+    "new": true,
+    "promo": false,
+    "discounted": false,
+    "featured": true
+  },
   "category": [
     { "order": 100, "title": "Men's"},
     { "order": 5, "title": "New Arrivals"}
   ],
+  "variant": [
+    {
+      "size": "L",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 10 },
+        { "inventory": "SHOP_PRAGUE", "count": 5 },
+        { "inventory": "SHOP_BRNO", "count": 0 }
+      ]
+    },
+    {
+      "size": "XL",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 10 },
+        { "inventory": "SHOP_PRAGUE", "count": 5 },
+        { "inventory": "SHOP_BRNO", "count": 0 }
+      ]
+    },
+    {
+      "size": "S",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 10 },
+        { "inventory": "SHOP_PRAGUE", "count": 5 },
+        { "inventory": "SHOP_BRNO", "count": 0 }
+      ]
+    }
+  ],
   "price": [
     { "pricelist": "RRP-CZK", "final_price": 1000, "original_price": 3000 },
     { "pricelist": "RRP-EUR", "final_price": 100, "original_price": 300 }
-  ],
-  "stock_info": [
-    { "inventory": "CENTRAL", "count": 10 },
-    { "inventory": "SHOP_PRAGUE", "count": 5 },
-    { "inventory": "SHOP_BRNO", "count": 0 }
   ]
 }

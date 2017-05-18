@@ -1,75 +1,47 @@
 {
   "properties": {
-    "code": {
-      "type": "text"
+    "code": { "type": "text" },
+    "title": { "type": "text" },
+    "description": { "type": "text" },
+    "brand": { "type": "text" },
+    "brand_keyword": { "type": "keyword" },
+    "color": { "type": "keyword" },
+    "collections": { "type": "keyword" },
+    "flag": {
+      "type": "nested",
+      "properties": {
+        "new": {"type": "boolean"},
+        "promo": {"type": "boolean"},
+        "featured": {"type": "boolean"},
+        "discounted": {"type": "boolean"}
+      }
     },
-    "title": {
-      "type": "text"
-    },
-    "description": {
-      "type": "text"
-    },
-    "brand": {
-      "type": "text"
-    },
-    "brand_keyword": {
-      "type": "keyword"
-    },
-    "collections": {
-      "type": "keyword"
-    },
-    "flag_new": {
-      "type": "boolean"
-    },
-    "flag_promo": {
-      "type": "boolean"
-    },
-    "flag_discounted": {
-      "type": "boolean"
-    },
-    "flag_featured": {
-      "type": "boolean"
-    },
-    "colors": {
-      "type": "keyword"
-    },
-    "sizes": {
-      "type": "keyword"
+    "variant": {
+      "type": "nested",
+      "properties": {
+        "size": { "type": "keyword"},
+        "stock_info": {
+          "type": "nested",
+          "properties": {
+            "inventory": { "type": "keyword" },
+            "count": { "type": "integer" }
+          }
+        }
+      }
     },
     "category": {
       "type": "nested",
       "properties": {
-        "order": {
-          "type": "long"
-        },
-        "title": {
-          "type": "text"
-        }
+        "order": { "type": "long" },
+        "title": { "type": "text" }
       }
     },
     "price": {
       "type": "nested",
       "properties": {
-        "pricelist": {
-          "type": "keyword"
-        },
-        "final_price": {
-          "type": "double"
-        },
-        "original": {
-          "type": "double"
-        }
-      }
-    },
-    "stock_info": {
-      "type": "nested",
-      "properties": {
-        "inventory": {
-          "type": "keyword"
-        },
-        "count": {
-          "type": "integer"
-        }
+        "pricelist": { "type": "keyword" },
+        "final_price": { "type": "double" },
+        "original": { "type": "double" }
       }
     }
   }

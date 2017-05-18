@@ -1,0 +1,32 @@
+{
+
+  "from": 0,
+  "size": 10,
+
+  "query": {
+    "match_all": {}
+  },
+
+  "aggs": {
+    "color": {
+      "terms": { "field": "colors.keyword" }
+    },
+    "brand": {
+      "terms": { "field": "brand_keyword" }
+    },
+    "flag_new": {
+      "terms": { "field": "flag_new" }
+    },
+    "variant" : {
+      "nested" : { "path" : "variant" },
+      "aggs" : {
+        "size" : { "terms" : { "field" : "variant.size" } }
+      }
+    }
+  },
+
+  "sort": { "brand_keyword" : { "order": "asc" } },
+
+  "_source": [ "title", "brand" ]
+
+}

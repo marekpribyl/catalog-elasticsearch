@@ -1,0 +1,17 @@
+# search as you type
+# this solution is not optimal - check Suggesters to be used instead
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters-completion.html
+{
+  "query": {
+    "match_phrase_prefix": {
+      "title": {
+        "query": "prop",
+        "max_expansions": 10
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "brand"
+  ]
+}

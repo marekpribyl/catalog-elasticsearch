@@ -8,18 +8,38 @@
   "flag_promo": false,
   "flag_discounted": false,
   "flag_featured": false,
-  "colors": ["BLACK", "BLUE"],
-  "sizes": ["8", "9", "11"],
+  "color": "BLACK",
   "category": [
     { "order": 10, "title": "Men's"}
+  ],
+  "variant": [
+    {
+      "size": "8",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 0 },
+        { "inventory": "SHOP_PRAGUE", "count": 1 },
+        { "inventory": "SHOP_BRNO", "count": 0 }
+      ]
+    },
+    {
+      "size": "9",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 10 },
+        { "inventory": "SHOP_PRAGUE", "count": 5 },
+        { "inventory": "SHOP_BRNO", "count": 0 }
+      ]
+    },
+    {
+      "size": "11",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 10 },
+        { "inventory": "SHOP_PRAGUE", "count": 5 },
+        { "inventory": "SHOP_BRNO", "count": 3 }
+      ]
+    }
   ],
   "price": [
     { "pricelist": "RRP-CZK", "final_price": 1000, "original_price": 3000 },
     { "pricelist": "RRP-EUR", "final_price": 150, "original_price": 300 }
-  ],
-  "stock_info": [
-    { "inventory": "CENTRAL", "count": 0 },
-    { "inventory": "SHOP_PRAGUE", "count": 1 },
-    { "inventory": "SHOP_BRNO", "count": 0 }
   ]
 }

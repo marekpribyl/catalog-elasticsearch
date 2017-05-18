@@ -4,24 +4,36 @@
   "description": "Coolest jacket on the world!",
   "brand": "Horsefeathers",
   "brand_keyword": "Horsefeathers",
+  "color": "BLACK",
   "collections": ["F16", "S17"],
   "flag_new": true,
   "flag_promo": false,
   "flag_discounted": false,
   "flag_featured": true,
-  "colors": ["BLACK"],
-  "sizes": ["M", "S"],
   "category": [
     { "order": 101, "title": "Men's"},
     { "order": 4, "title": "New Arrivals"}
   ],
+  "variant": [
+    {
+      "size": "M",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 1 },
+        { "inventory": "SHOP_PRAGUE", "count": 2 },
+        { "inventory": "SHOP_BRNO", "count": 3 }
+      ]
+    },
+    {
+      "size": "S",
+      "stock_info": [
+        { "inventory": "CENTRAL", "count": 10 },
+        { "inventory": "SHOP_PRAGUE", "count": 5 },
+        { "inventory": "SHOP_BRNO", "count": 0 }
+      ]
+    }
+  ],
   "price": [
     { "pricelist": "RRP-CZK", "final_price": 100, "original_price": 300 },
     { "pricelist": "RRP-EUR", "final_price": 300, "original_price": 300 }
-  ],
-  "stock_info": [
-    { "inventory": "CENTRAL", "count": 0 },
-    { "inventory": "SHOP_PRAGUE", "count": 0 },
-    { "inventory": "SHOP_BRNO", "count": 0 }
   ]
 }
