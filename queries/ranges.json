@@ -1,20 +1,23 @@
+//GET /catalog_en/product/_search
+//filter by ranges: price from-to, discount from-to
+//filter by all factets: brand, color, size
+//filter by flags: new, discount
 {
 
-  "from": 0,
-  "size": 10,
+  "size": 0,
 
   "query": {
     "bool": {
       "must": [
         { "term" : { "color" : "RED" }  },
         { "term" : { "brand_keyword" : "HORSEFEATHERS" }  },
-        {     "nested" : {
+        { "nested" : {
           "path" : "price",
           "query" : {
             "bool" : {
               "must" : [
                 { "match" : {"price.pricelist" : "RRP-EUR"} },
-                { "range" : {"price.final" : {"gt" : 50, "lt": 200}} }
+                { "range" : {"price.final" : {"gt" : 50, "lt": 200} } }
               ]
             }
           }
@@ -48,32 +51,8 @@
           }
         }
       }
-    },
-    "color": {
-      "terms": { "field": "color" }
-    },
-    "brand": {
-      "terms": { "field": "brand_keyword" }
-    },
-    "new": {
-      "terms": { "field": "flag_new" }
-    },
-    "discounted": {
-      "terms": { "field": "flag_discounted" }
-    },
-    "variant" : {
-      "nested" : { "path" : "variant" },
-      "aggs" : {
-        "size" : { "terms" : { "field" : "variant.size" } }
-      }
     }
-  },
-
-  "sort": { "brand_keyword" : { "order": "asc" } },
-
-  "_source": [ "title",
-    "brand"
-  ]
+  }
 
 }
 

@@ -29,7 +29,9 @@
       "type": "nested",
       "properties": {
         "order": { "type": "long" },
-        "title": { "type": "text" }
+        "title": { "type": "text" },
+        "path": { "type": "text" },
+        "slug": { "type": "text", "index" : "not_analyzed" }
       }
     },
     "price": {

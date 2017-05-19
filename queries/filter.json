@@ -1,0 +1,70 @@
+//GET /catalog_en/product/_search
+{
+
+  "from": 0,
+  "size": 10,
+
+  "query": {
+    "bool": {
+      "must": [
+        { "nested" : {
+          "path": "category",
+          "query": {
+            "match_phrase_prefix": { "category.path": "1045:" }
+          }
+        }
+        },
+        { "terms" : { "color" : ["RED", "BLUE", "BLACK"] }  },
+        { "terms" : { "brand_keyword" : ["HORSEFEATHERS", "DVS"] }  },
+        { "term" : { "flag_new" : "true" }  },
+        { "term" : { "flag_promo" : "true" }  },
+        { "nested" : {
+          "path" : "variant",
+          "query" : {
+            "bool" : {
+              "must" : [
+                { "terms" : {"variant.size" : [ "L", "XL", "S" ] } }
+              ]
+            }
+          }
+        }
+        },
+        { "nested" : {
+          "path" : "price",
+          "query" : {
+            "bool" : {
+              "must" : [
+                { "match" : {"price.pricelist" : "RRP-EUR"} },
+                { "range" : {"price.final" : {"gt" : 50, "lt": 400} } }
+              ]
+            }
+          }
+        }
+        },
+        { "nested" : {
+          "path" : "variant",
+          "query" : {
+            "nested": {
+              "path": "variant.stock_info",
+              "query": {
+                "bool" : {
+                  "must" : [
+                    { "terms" : {"variant.stock_info.inventory" : [ "CENTRAL", "SHOP_PRAGUE"] } },
+                    { "range" : {"variant.stock_info.count" : {"gt" : 0}} }
+                  ]
+                }
+              }
+            }
+          }
+        }
+        }
+      ]
+    }
+  },
+
+  "sort": { "brand_keyword" : { "order": "asc" } },
+
+  "_source": [ "title", "brand" ]
+
+}
+

@@ -10,7 +10,12 @@
   "flag_featured": false,
   "color": "BLACK",
   "category": [
-    { "order": 10, "title": "Men's"}
+    {
+      "order": 10,
+      "title": "street oblečení",
+      "path" : "1045:1050:1267:1368",
+      "slug" : "horsefeathers-store.cz<|>výprodej<|>dámské<|>street oblečení"
+    }
   ],
   "variant": [
     {

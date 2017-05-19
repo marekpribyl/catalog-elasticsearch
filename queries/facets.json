@@ -1,0 +1,50 @@
+//GET /catalog_en/product/_search
+// filter by: category
+{
+
+  "size": 0,
+
+  "query": {
+    "bool": {
+      "must": [
+        { "term" : { "color" : "RED" }  },
+        { "term" : { "brand_keyword" : "HORSEFEATHERS" }  },
+        { "nested" : {
+          "path" : "price",
+          "query" : {
+            "bool" : {
+              "must" : [
+                { "match" : {"price.pricelist" : "RRP-EUR"} },
+                { "range" : {"price.final" : {"gt" : 50, "lt": 200} } }
+              ]
+            }
+          }
+        }
+        }
+      ]
+    }
+  },
+
+  "aggs": {
+    "color": {
+      "terms": { "field": "color" }
+    },
+    "brand": {
+      "terms": { "field": "brand_keyword" }
+    },
+    "new": {
+      "terms": { "field": "flag_new" }
+    },
+    "discounted": {
+      "terms": { "field": "flag_discounted" }
+    },
+    "variant" : {
+      "nested" : { "path" : "variant" },
+      "aggs" : {
+        "size" : { "terms" : { "field" : "variant.size" } }
+      }
+    }
+  }
+
+}
+
