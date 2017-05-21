@@ -62,7 +62,19 @@
     }
   },
 
-  "sort": { "brand_keyword" : { "order": "asc" } },
+  //"sort": { "brand_keyword" : { "order": "asc" } },
+  //price, discount
+  "sort":    {
+    "category.order": {
+      "order": "desc",
+      "nested_path": "category",
+      "nested_filter": {
+        "term": {
+          "category.path": "1045:1050:1267:1368"
+        }
+      }
+    }
+  },
 
   "_source": [ "title", "brand" ]
 
