@@ -22,6 +22,10 @@
   "variant": [
     {
       "size": "M",
+      "price": [
+        { "pricelist": "RRP-CZK", "final": 100, "original": 300, "discount" : 66 },
+        { "pricelist": "RRP-EUR", "final": 300, "original": 300, "discount" : 0 }
+      ],
       "stock_info": [
         { "inventory": "CENTRAL", "count": 1 },
         { "inventory": "SHOP_PRAGUE", "count": 2 },
@@ -30,15 +34,15 @@
     },
     {
       "size": "S",
+      "price": [
+        { "pricelist": "RRP-CZK", "final": 100, "original": 300, "discount" : 66 },
+        { "pricelist": "RRP-EUR", "final": 300, "original": 300, "discount" : 0 }
+      ],
       "stock_info": [
         { "inventory": "CENTRAL", "count": 10 },
         { "inventory": "SHOP_PRAGUE", "count": 5 },
         { "inventory": "SHOP_BRNO", "count": 0 }
       ]
     }
-  ],
-  "price": [
-    { "pricelist": "RRP-CZK", "final": 100, "original": 300, "discount" : 66 },
-    { "pricelist": "RRP-EUR", "final": 300, "original": 300, "discount" : 0 }
   ]
 }

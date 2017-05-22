@@ -20,6 +20,10 @@
   "variant": [
     {
       "size": "8",
+      "price": [
+        { "pricelist": "RRP-CZK", "final": 1000, "original": 3000, "discount" : 66 },
+        { "pricelist": "RRP-EUR", "final": 150, "original": 300, "discount" : 50 }
+      ],
       "stock_info": [
         { "inventory": "CENTRAL", "count": 0 },
         { "inventory": "SHOP_PRAGUE", "count": 1 },
@@ -28,6 +32,10 @@
     },
     {
       "size": "9",
+      "price": [
+        { "pricelist": "RRP-CZK", "final": 1000, "original": 3000, "discount" : 66 },
+        { "pricelist": "RRP-EUR", "final": 150, "original": 300, "discount" : 50 }
+      ],
       "stock_info": [
         { "inventory": "CENTRAL", "count": 10 },
         { "inventory": "SHOP_PRAGUE", "count": 5 },
@@ -36,15 +44,15 @@
     },
     {
       "size": "11",
+      "price": [
+        { "pricelist": "RRP-CZK", "final": 1000, "original": 3000, "discount" : 66 },
+        { "pricelist": "RRP-EUR", "final": 150, "original": 300, "discount" : 50 }
+      ],
       "stock_info": [
         { "inventory": "CENTRAL", "count": 10 },
         { "inventory": "SHOP_PRAGUE", "count": 5 },
         { "inventory": "SHOP_BRNO", "count": 3 }
       ]
     }
-  ],
-  "price": [
-    { "pricelist": "RRP-CZK", "final": 1000, "original": 3000, "discount" : 66 },
-    { "pricelist": "RRP-EUR", "final": 150, "original": 300, "discount" : 50 }
   ]
 }

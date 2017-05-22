@@ -6,7 +6,10 @@
     "brand": { "type": "text" },
     "brand_keyword": { "type": "keyword" },
     "color": { "type": "keyword" },
-    "image": {"type": "text", "index" : false},
+    "image_thumbnail": {"type": "text", "index" : false},
+    "image_small": {"type": "text", "index" : false},
+    "image_medium": {"type": "text", "index" : false},
+    "image_large": {"type": "text", "index" : false},
     "collections": { "type": "keyword" },
     "flag_new": {"type": "boolean"},
     "flag_promo": {"type": "boolean"},
@@ -16,6 +19,15 @@
       "type": "nested",
       "properties": {
         "size": { "type": "keyword"},
+        "price": {
+          "type": "nested",
+          "properties": {
+            "pricelist": { "type": "keyword" },
+            "final": { "type": "double" },
+            "original": { "type": "double" },
+            "discount": { "type": "double" }
+          }
+        },
         "stock_info": {
           "type": "nested",
           "properties": {
@@ -32,15 +44,6 @@
         "title": { "type": "text" },
         "path": { "type": "text" },
         "slug": { "type": "text", "index" : "not_analyzed" }
-      }
-    },
-    "price": {
-      "type": "nested",
-      "properties": {
-        "pricelist": { "type": "keyword" },
-        "final": { "type": "double" },
-        "original": { "type": "double" },
-        "discount": { "type": "double" }
       }
     }
   }
